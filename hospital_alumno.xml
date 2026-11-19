@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+Documento XML de pedidos para la farmacia hospitalaria, el cual valida el DTD. 
+Alumna: Ana Zafra Vallejo
+Los comentarios a declarar son que se ha incluido un cliente facultativo y un 
+centro hospitalario con tres productos, y se ha realizado una correcta anidacion
+y tabulacion de etiquetas.
+-->
+
+<!DOCTYPE pedidos SYSTEM "hospital_alumno.dtd">
+<pedidos>
+
+    <!-- Pedido 1: Cliente facultativo -->
+    <pedido>
+        <cliente cod="FAC-001">
+            <!-- Nombre del profesor -->
+            <nombre>Jose Antonio</nombre>
+        </cliente>
+        <productos>
+            <!-- Producto con el nombre de la provincia que resido -->
+            <producto>
+                <nombre>Malaga</nombre>
+                <precio pagado="si">120</precio>
+            </producto>
+        </productos>
+    </pedido>
+
+    <!-- Pedido 2: Centro hospitalario -->
+    <pedido>
+        <cliente cod="HOS-002">
+            <!-- Razon social con mi nombre completo -->
+            <razon_social>Ana Zafra Vallejo</razon_social>
+        </cliente>
+        <productos>
+            <!-- Primer producto con el precio 25 euros sin pagar -->
+            <producto>
+                <nombre>Termometro digital</nombre>
+                <precio pagado="no">25</precio>
+            </producto>
+
+            <!-- Segundo producto de la familia Antiacidos -->
+            <producto familia="Antiacidos">
+                <nombre>Almax Forte</nombre>
+                <precio pagado="si">12.5</precio>
+            </producto>
+
+            <!-- Tercer producto con el nombre de mi primer apellido -->
+            <producto>
+                <nombre>Zafra</nombre>
+                <precio>30</precio>
+            </producto>
+        </productos>
+    </pedido>
+
+</pedidos>

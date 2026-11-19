@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pedidos SYSTEM "ALUMNO.dtd">
+<pedidos>
+    <pedido>
+        <cliente cod="AA-111">
+            <nombre>Ana Gil</nombre>
+        </cliente>
+        <productos>
+            <producto familia="Antibióticos" >
+                <nombre>Antibug</nombre>
+                <precio pagado="sí">100</precio>
+            </producto>
+            <producto familia="Antisépticos" >
+                <cantidad>20</cantidad>
+                <nombre>Bioclean</nombre>
+                <precio>75.25</precio>
+            </producto>
+        </productos>
+    </pedido>
+    <pedido>
+        <cliente cod="CC-222">
+            <razon_social>Acme</razon_social>
+        </cliente>
+        <productos>
+            <producto familia="Antiácidos" >
+                <nombre>ArdorStop</nombre>
+                <precio pagado="no">10.5</precio>
+            </producto>
+        </productos>
+    </pedido>
+</pedidos>

@@ -1,0 +1,41 @@
+<!-- 
+DTD para validar hospital.xml segun las especificaciones proporcionadas
+Alumna: Ana Zafra Vallejo
+Los comentarios a declarar son que se han respetado las restricciones de atributos, 
+al igual que la estructura cliente/productos/producto.
+-->
+
+<!-- Raiz del documento: puede contener cero o muchos pedidos -->
+<!ELEMENT pedidos (pedido*)>
+
+<!-- Cada pedido puede tener definido un cliente y una lista de productos, siendo obligatorio-->
+<!ELEMENT pedido (cliente?, productos)>
+
+<!-- El cliente contendra un nombre o una razon social -->
+<!ELEMENT cliente (nombre | razon_social)>
+     <!-- El atributo 'cod' es obligatorio para identificar al cliente -->
+    <!ATTLIST cliente cod CDATA #REQUIRED>
+
+<!-- La lista de productos debe contener al menos un producto -->
+<!ELEMENT productos (producto+)>
+
+<!-- Cada producto puede tener una cantidad (opcional), un nombre y un precio -->
+<!ELEMENT producto (cantidad?, nombre, precio)>
+    <!-- El atributo 'familia' indica la categoria del producto, tomando los 
+    valores: Antibioticos, Antisepticos, Antiacidos, siendo 'Antivirico' su valor por defecto-->
+    <!ATTLIST producto familia (Antibioticos | Antisepticos | Antiacidos | Antivirico) "Antivirico">
+
+<!-- Elemento para la cantidad del producto -->
+<!ELEMENT cantidad (#PCDATA)>
+
+<!-- Elemento para el nombre del producto o del cliente -->
+<!ELEMENT nombre (#PCDATA)>
+
+<!-- Elemento para la razon social (solo en clientes tipo empresa) -->
+<!ELEMENT razon_social (#PCDATA)>
+
+<!-- Elemento para el precio del producto -->
+<!ELEMENT precio (#PCDATA)>
+    <!-- El atributo 'pagado' tiene los valores 'si' o 'no', siendo opcional -->
+    <!-- El atributo 'moneda' tiene un valor fijo -->
+    <!ATTLIST precio pagado (si | no) #IMPLIED moneda CDATA #FIXED "EUR">
